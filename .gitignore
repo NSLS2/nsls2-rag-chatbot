@@ -49,8 +49,7 @@ Thumbs.db
 !.vscode/extensions.json
 
 # Uploads / temp (backend)
-uploads/*
-!uploads/.gitkeep
+**/uploads/*
 
 # Local data volumes (if ever created)
 qdrant_storage/
