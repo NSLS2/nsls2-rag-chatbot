@@ -1,0 +1,81 @@
+# Root .gitignore for UserGuideRAG monorepo
+# -------------------------------
+# Pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+coverage/
+htmlcov/
+
+# Virtual environments
+venv/
+.env/
+*.env
+
+# Node / Frontend
+# Ignore node_modules at any depth (both root and nested workspaces)
+node_modules/
+**/node_modules/
+dist/
+.vite/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Logs & runtime
+*.log
+logs/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Uploads / temp (backend)
+uploads/*
+!uploads/.gitkeep
+
+# Local data volumes (if ever created)
+qdrant_storage/
+postgres_data/
+
+# ==========================================
+# Python backend (FastAPI / Pixi)
+# ==========================================
+# Virtual environments & Pixi
+.venv/
+pixi.lock
+.pixi/
+pixi.env/
+.envs/
+.env.local
+.envrc
+
+# Docker artifacts
+*.pid
+*.tar
+
+# Generated docs / reports
+docs/_build/
+
+# Ignore compiled assets
+*.bundle.*
+
+# End of file

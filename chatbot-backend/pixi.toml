@@ -1,0 +1,34 @@
+[workspace]
+authors = ["HarikaBishai <hbishai1@bnl.gov>"]
+channels = ["conda-forge"]
+name = "chatbot-backend"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+dev = { cmd = ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"], env = { DATABASE_URL = "postgresql+psycopg://raguser:ragpass@localhost:5433/ragdb", QDRANT_HOST = "localhost", QDRANT_PORT = "6333" } }
+serve = { cmd = ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"], env = { DATABASE_URL = "postgresql+psycopg://raguser:ragpass@localhost:5433/ragdb", QDRANT_HOST = "localhost", QDRANT_PORT = "6333" } }
+ingest = { cmd = ["python", "scripts/ingest.py"], env = { DATABASE_URL = "postgresql+psycopg://raguser:ragpass@localhost:5433/ragdb", QDRANT_HOST = "localhost", QDRANT_PORT = "6333" } }
+
+[dependencies]
+fastapi = ">=0.118.2,<0.119"
+uvicorn = ">=0.37.0,<0.38"
+python-multipart = ">=0.0.20,<0.0.21"
+pydantic = ">=2.12.0,<3"
+pydantic-settings = ">=2.11.0,<3"
+langchain = ">=0.3.27,<0.4"
+langchain-community = ">=0.3.31,<0.4"
+qdrant-client = ">=1.15.1,<2"
+openai = ">=1.109.1,<2"
+requests = ">=2.32.5,<3"
+python-dotenv = ">=1.1.1,<2"
+tqdm = ">=4.67.1,<5"
+loguru = ">=0.7.3,<0.8"
+pandas = ">=2.3.3,<3"
+sentence-transformers = ">=5.1.1,<6"
+pypdf = ">=6.1.1,<7"
+psycopg = ">=3.2.10,<4"
+langchain-ollama = ">=0.3.10,<0.4"
+
+[tool.pixi.environment]
+dotenv = true

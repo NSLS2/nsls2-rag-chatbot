@@ -1,0 +1,56 @@
+# -----------------------------
+# Core Web Framework
+# -----------------------------
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.8.2
+pydantic-settings==2.3.4
+
+# -----------------------------
+# LangChain & Data Processing
+# -----------------------------
+langchain==0.2.14
+langchain-community==0.2.12
+unstructured==0.15.6
+pandas==2.2.2
+numpy==1.26.4
+
+# -----------------------------
+# Database & ORM
+# -----------------------------
+sqlalchemy==2.0.31
+psycopg==3.2.1
+
+# -----------------------------
+# File & Document Loaders
+# -----------------------------
+PyPDF2==3.0.1          # PDF parsing
+pdfminer.six==20221105  # Alternative PDF backend
+python-docx==1.1.0      # DOC/DOCX support
+openpyxl==3.1.5         # Excel/CSV parsing
+requests==2.32.3        # Web/API fetching
+
+# -----------------------------
+# Vector Storage (for future use)
+# -----------------------------
+qdrant-client==1.9.0
+
+# -----------------------------
+# Embeddings
+# -----------------------------
+sentence-transformers==2.2.2
+huggingface-hub==0.23.2
+transformers==4.40.2
+
+# -----------------------------
+# Embedding & LLM Integration
+# -----------------------------
+openai==1.44.0
+
+# -----------------------------
+# Environment & Utilities
+# -----------------------------
+python-dotenv==1.0.1
+tqdm==4.66.5
+loguru==0.7.2
