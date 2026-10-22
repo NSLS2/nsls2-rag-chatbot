@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # ---- Build stage ----
-FROM node:20-alpine AS build
+FROM node:24-alpine AS build
 WORKDIR /app
 
 # Install deps
@@ -12,7 +12,7 @@ COPY . .
 RUN npm run build
 
 # ---- Runtime stage ----
-FROM nginx:1.27-alpine AS runtime
+FROM nginx:1.31-alpine AS runtime
 WORKDIR /usr/share/nginx/html
 
 # Remove default nginx static assets
